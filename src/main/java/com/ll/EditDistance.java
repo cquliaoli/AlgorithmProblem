@@ -1,4 +1,4 @@
-package com.ll.editDistance;
+package com.ll;
 
 /**
  * Created by liaoli

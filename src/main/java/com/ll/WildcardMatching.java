@@ -19,13 +19,11 @@ public class WildcardMatching {
         if(s == null || s.length() == 0){
             return p == null || p.length() == 0;
         }
-
         s="#"+s;
         p="#"+p;
         int slen=s.length(),plen=p.length();
         boolean[][]match=new boolean[plen][slen];
         match[0][0]=true;
-
         for(int i=1;i<plen;i++){
             for(int j=0;j<slen;j++){
                 if((p.charAt(i)<='z'&&p.charAt(i)>='a')

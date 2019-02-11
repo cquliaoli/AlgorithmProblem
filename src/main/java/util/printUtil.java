@@ -1,5 +1,7 @@
 package util;
 
+import java.util.List;
+
 /**
  * Created by liaoli
  * date: 2018/7/18
@@ -18,5 +20,10 @@ public class printUtil {
             sb.deleteCharAt(sb.length()-2);
         }
         System.out.println(sb.toString());
+    }
+    public static void printList(List<String>list){
+        for (String s : list) {
+            System.out.println(s);
+        }
     }
 }

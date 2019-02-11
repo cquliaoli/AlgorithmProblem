@@ -151,13 +151,16 @@ public class WordBreak {
         boolean[] f = new boolean[n + 1];// 可以用滚动数组 将其优化为 maxLen
         f[n] = true;
         for (int i = end; i >= 0; i--){
+            TrieNode p = root;
             for (int j = 0; j < maxLen; j++){
                 if(i + j <= end){
-                    Result result = root.hasWord(chars, i, i + j, root);
-                    if(Result.NotMatch == result){
+                    int index = chars[i + j] - 'a';
+                    if(p.sons[index] == null){
                         f[i] = false;
-                        break;
-                    }else if(Result.Word == result && f[i + j + 1]){
+                        break ;
+                    }
+                    p = p.sons[index];
+                    if(p.hasWord && f[i + j + 1]){
                         f[i] = true;
                         break;
                     }
